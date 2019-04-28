@@ -7,7 +7,9 @@
       <span class="iconfont">&#xe632;</span>
       搜索商品
     </div>
-    <div class="header-right">我的</div>
+    <div class="header-right">
+      <div class="iconfont my-icon">&#xe607;</div>
+    </div>
   </div>
 </template>
 
@@ -45,4 +47,7 @@ export default {
       width : 1.24rem
       float : right
       text-align : center
+      .my-icon
+        text-align center
+        font-size .5rem
 </style>
