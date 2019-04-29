@@ -7,15 +7,26 @@
       <span class="iconfont">&#xe632;</span>
       搜索商品
     </div>
-    <div class="header-right">
-      <div class="iconfont my-icon">&#xe607;</div>
-    </div>
+      <div class="header-right">
+        <div class="iconfont my-icon" @click="myClick">&#xe607;</div>
+      </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  methods: {
+    myClick () {
+      var cPos = document.cookie.indexOf('smo_token')
+      // eslint-disable-next-line eqeqeq
+      if (cPos != -1) {
+        this.$router.push({path: '/personal'})
+      } else {
+        this.$router.push({path: '/login'})
+      }
+    }
+  }
 }
 </script>
 

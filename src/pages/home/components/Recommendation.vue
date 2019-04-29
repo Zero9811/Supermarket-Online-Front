@@ -21,12 +21,15 @@
 <script>
 export default {
   name: 'Recommendation',
+  props: {
+    recommend: Array
+  },
   data () {
     return {
       recommendList: [{
         id: '0001',
         imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
+        name: '袁胖猪',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
         type: '零食'
@@ -68,7 +71,6 @@ export default {
   @import "~styles/varibles.styl"
   @import "~styles/mixins.styl"
   .recommend-title
-    margin-top .2rem
     line-height .8rem
     background #eee
     text-indent .2rem
