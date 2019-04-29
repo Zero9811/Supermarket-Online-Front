@@ -20,32 +20,32 @@ export default {
         desc: '水果'
       }, {
         id: '0002',
-        imgUrl: '/static/navigationImgs/snake.png',
-        desc: '零食'
-      }, {
-        id: '0003',
-        imgUrl: '/static/navigationImgs/vegetables.png',
-        desc: '蔬菜'
-      }, {
-        id: '0004',
-        imgUrl: '/static/navigationImgs/milk.png',
-        desc: '乳制品'
-      }, {
-        id: '0005',
-        imgUrl: '/static/navigationImgs/necessary.png',
-        desc: '日用品'
-      }, {
-        id: '0006',
-        imgUrl: '/static/navigationImgs/personal.png',
-        desc: '个人护理'
-      }, {
-        id: '0007',
         imgUrl: '/static/navigationImgs/drink.png',
         desc: '饮料'
       }, {
-        id: '0008',
+        id: '0003',
         imgUrl: '/static/navigationImgs/meat.png',
         desc: '肉类'
+      }, {
+        id: '0004',
+        imgUrl: '/static/navigationImgs/vegetables.png',
+        desc: '蔬菜'
+      }, {
+        id: '0005',
+        imgUrl: '/static/navigationImgs/snake.png',
+        desc: '零食'
+      }, {
+        id: '0006',
+        imgUrl: '/static/navigationImgs/milk.png',
+        desc: '乳制品'
+      }, {
+        id: '0007',
+        imgUrl: '/static/navigationImgs/necessary.png',
+        desc: '日用品'
+      }, {
+        id: '0008',
+        imgUrl: '/static/navigationImgs/personal.png',
+        desc: '个人护理'
       }]
     }
   }

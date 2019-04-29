@@ -4,8 +4,6 @@
     <home-swiper></home-swiper>
     <home-icons></home-icons>
     <recommendation :recommend="recommend"></recommendation>
-    <div>home</div>
-    <router-link to="./login">登录页面</router-link>
   </div>
 </template>
 
@@ -47,6 +45,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
 </style>
