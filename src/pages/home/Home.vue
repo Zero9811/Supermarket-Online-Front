@@ -3,7 +3,7 @@
     <home-header></home-header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
-    <recommendation :recommend="recommend"></recommendation>
+    <recommendation :recommendation="recommendation"></recommendation>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   },
   data () {
     return {
-      recommend: []
+      recommendation: []
     }
   },
   mounted () {
@@ -37,7 +37,7 @@ export default {
     getUserInfoSucc (res) {
       res = res.data
       if (res.code === 0) {
-        this.recommend = res.data
+        this.recommendation = res.data
       }
       console.log(res)
     }
