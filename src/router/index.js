@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import Personal from '@/pages/personal/Personal'
 import Register from '@/pages/login/Register'
+import Commodity from '../pages/commodity/Commodity'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/personal',
       name: 'Personal',
       component: Personal
+    },
+    {
+      path: '/commodity',
+      name: 'Commodity',
+      component: Commodity
     }
   ]
 })

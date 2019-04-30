@@ -1,54 +1,76 @@
 <template>
-    <div class="icons">
-      <router-link to="/commodity">
-        <div class="icon" v-for="item of iconList" :key="item.id">
-          <div class="icon-img">
-            <img class="icon-img-content" :src="item.imgUrl"/>
-          </div>
+  <div class="icons">
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(page,index) of pages" :key="index">
+        <router-link to="/commodity">
+          <div class="icon" v-for="item of page" :key="item.id">
+            <div class="icon-img">
+              <img class="icon-img-content" :src="item.imgUrl"/>
+            </div>
             <p class="icon-desc">{{item.desc}}</p>
-        </div>
-      </router-link>
-    </div>
+          </div>
+        </router-link>
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeIcons',
+  name: 'CommodityCatalog',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: false,
+        autoplay: false
+      },
       iconList: [{
-        id: 1,
+        id: '0001',
         imgUrl: '/static/navigationImgs/fruit.png',
         desc: '水果'
       }, {
-        id: 2,
+        id: '0002',
         imgUrl: '/static/navigationImgs/drink.png',
         desc: '饮料'
       }, {
-        id: 3,
+        id: '0003',
         imgUrl: '/static/navigationImgs/meat.png',
         desc: '肉类'
       }, {
-        id: 4,
+        id: '0004',
         imgUrl: '/static/navigationImgs/vegetables.png',
         desc: '蔬菜'
       }, {
-        id: 5,
+        id: '0005',
         imgUrl: '/static/navigationImgs/snake.png',
         desc: '零食'
       }, {
-        id: 6,
+        id: '0006',
         imgUrl: '/static/navigationImgs/milk.png',
         desc: '乳制品'
       }, {
-        id: 7,
+        id: '0007',
         imgUrl: '/static/navigationImgs/necessary.png',
         desc: '日用品'
       }, {
-        id: 8,
+        id: '0008',
         imgUrl: '/static/navigationImgs/personal.png',
         desc: '个人护理'
       }]
+    }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 4)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
     }
   }
 }
@@ -59,7 +81,7 @@ export default {
   .icons
     overflow : hidden
     height : 0
-    padding-bottom : 50%
+    padding-bottom : 25%
     background #FFF5EE
     .icon
       position relative

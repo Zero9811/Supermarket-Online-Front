@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     registerClick () {
-      if (this.loginForm.password === this.loginForm.password1){
+      if (this.loginForm.password === this.loginForm.password1) {
         console.log(this.loginForm)
       } else {
         alert('密码不一致')

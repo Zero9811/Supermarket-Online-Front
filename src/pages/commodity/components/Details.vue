@@ -1,26 +1,25 @@
 <template>
-    <div>
-      <div class="recommend-title">热销推荐</div>
-      <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-          <img class="item-img" :src="item.imgUrl1"/>
-          <div class="item-info">
-            <p class="item-title">{{item.name}}</p>
-            <p class="item-desc">{{item.description}}</p>
-            <div class="item-price-wrapper">
-              <div class="item-price">{{item.price}}</div>
-              <div class="zhanwei"></div>
-              <button class="item-button">购买</button>
-            </div>
+  <div>
+    <ul>
+      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <img class="item-img" :src="item.imgUrl1"/>
+        <div class="item-info">
+          <p class="item-title">{{item.name}}</p>
+          <p class="item-desc">{{item.description}}</p>
+          <div class="item-price-wrapper">
+            <div class="item-price">{{item.price}}</div>
+            <div class="zhanwei"></div>
+            <button class="item-button">购买</button>
           </div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Recommendation',
+  name: 'CommodityDetails',
   props: {
     recommend: Array
   },
@@ -61,41 +60,6 @@ export default {
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
         type: '零食'
-      }, {
-        id: '0006',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0007',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0008',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0009',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '00010',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
       }]
     }
   }
@@ -105,11 +69,6 @@ export default {
 <style lang="stylus" scoped>
   @import "~styles/varibles.styl"
   @import "~styles/mixins.styl"
-  .recommend-title
-    line-height .8rem
-    background #eee
-    text-indent .2rem
-    text-align left
   .item
     overflow hidden
     display flex
