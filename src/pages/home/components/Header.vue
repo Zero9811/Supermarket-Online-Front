@@ -3,10 +3,12 @@
     <div class="header-left">
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
-    <div class="header-input">
-      <span class="iconfont">&#xe632;</span>
-      搜索商品
-    </div>
+    <router-link to="/commodity/search" class="header-input">
+      <div>
+          <span class="iconfont">&#xe632;</span>
+          搜索商品
+      </div>
+    </router-link>
       <div class="header-right">
         <div class="iconfont my-icon" @click="myClick">&#xe607;</div>
       </div>

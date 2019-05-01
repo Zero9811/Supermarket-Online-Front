@@ -7,7 +7,6 @@
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
-      搜索商品
     </div>
     <div class="header-right">
       <div class="iconfont my-icon" @click="myClick">&#xe607;</div>
@@ -54,7 +53,6 @@ export default {
       margin-top : .12rem
       margin-left : .2rem
       /*padding-left : .2rem*/
-      background : #ffffff
       border-radius : .1rem
       color : #ccc
     .header-right

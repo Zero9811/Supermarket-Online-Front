@@ -1,6 +1,7 @@
 <template>
     <div>
       <commodity-header></commodity-header>
+      <search-icon></search-icon>
       <commodity-catalog></commodity-catalog>
       <commodity-details></commodity-details>
     </div>
@@ -10,14 +11,14 @@
 import CommodityHeader from './components/Header'
 import CommodityCatalog from './components/Catalog'
 import CommodityDetails from './components/Details'
-import HomeHeader from '../home/components/Header'
+import SearchIcon from './components/Search'
 export default {
   name: 'Commodity',
   components: {
     CommodityHeader,
     CommodityCatalog,
     CommodityDetails,
-    HomeHeader
+    SearchIcon
   }
 }
 </script>
