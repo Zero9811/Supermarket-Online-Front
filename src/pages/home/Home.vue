@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     getUserInfo () {
-      axios.get('/api/user/users')
+      axios.get('/api/myUser/user/users')
         .then(this.getUserInfoSucc)
     },
     getUserInfoSucc (res) {

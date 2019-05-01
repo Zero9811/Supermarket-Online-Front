@@ -65,7 +65,7 @@ export default {
     },
     login () {
       console.log(this.loginForm.username)
-      axios.post('http://localhost:8080/user/login', qs.stringify({
+      axios.post('/api/myUser/user/login', qs.stringify({
         username: this.loginForm.username,
         password: this.loginForm.password
       }))
