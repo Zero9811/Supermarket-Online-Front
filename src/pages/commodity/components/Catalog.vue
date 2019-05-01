@@ -2,14 +2,12 @@
   <div class="icons">
     <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
-        <router-link to="/commodity">
-          <div class="icon" v-for="item of page" :key="item.id">
-            <div class="icon-img">
-              <img class="icon-img-content" :src="item.imgUrl"/>
-            </div>
-            <p class="icon-desc">{{item.desc}}</p>
+        <div class="icon" v-for="item of page" :key="item.id" @click="handleDetailClick(item.id)">
+          <div class="icon-img">
+            <img class="icon-img-content" :src="item.imgUrl"/>
           </div>
-        </router-link>
+          <p class="icon-desc">{{item.desc}}</p>
+        </div>
       </swiper-slide>
     </swiper>
   </div>
@@ -26,35 +24,35 @@ export default {
         autoplay: false
       },
       iconList: [{
-        id: '0001',
+        id: 1,
         imgUrl: '/static/navigationImgs/fruit.png',
         desc: '水果'
       }, {
-        id: '0002',
+        id: 2,
         imgUrl: '/static/navigationImgs/drink.png',
         desc: '饮料'
       }, {
-        id: '0003',
+        id: 3,
         imgUrl: '/static/navigationImgs/meat.png',
         desc: '肉类'
       }, {
-        id: '0004',
+        id: 4,
         imgUrl: '/static/navigationImgs/vegetables.png',
         desc: '蔬菜'
       }, {
-        id: '0005',
+        id: 5,
         imgUrl: '/static/navigationImgs/snake.png',
         desc: '零食'
       }, {
-        id: '0006',
+        id: 6,
         imgUrl: '/static/navigationImgs/milk.png',
         desc: '乳制品'
       }, {
-        id: '0007',
+        id: 7,
         imgUrl: '/static/navigationImgs/necessary.png',
         desc: '日用品'
       }, {
-        id: '0008',
+        id: 8,
         imgUrl: '/static/navigationImgs/personal.png',
         desc: '个人护理'
       }]
@@ -71,6 +69,12 @@ export default {
         pages[page].push(item)
       })
       return pages
+    }
+  },
+  methods: {
+    handleDetailClick (typeId) {
+      this.$emit('detailChange', typeId)
+      console.log(typeId)
     }
   }
 }

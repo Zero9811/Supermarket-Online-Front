@@ -2,8 +2,8 @@
     <div>
       <commodity-header></commodity-header>
       <search-icon></search-icon>
-      <commodity-catalog></commodity-catalog>
-      <commodity-details></commodity-details>
+      <commodity-catalog @detailChange="handleDetailChange"></commodity-catalog>
+      <commodity-details :typeId="typeId"></commodity-details>
     </div>
 </template>
 
@@ -19,6 +19,16 @@ export default {
     CommodityCatalog,
     CommodityDetails,
     SearchIcon
+  },
+  data () {
+    return {
+      typeId: 0
+    }
+  },
+  methods: {
+    handleDetailChange (typeId) {
+      this.typeId = typeId
+    }
   }
 }
 </script>

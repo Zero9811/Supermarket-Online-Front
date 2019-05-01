@@ -14,10 +14,47 @@
       </div>
     </div>
     <div class="history">
-      搜索历史
+      <div class="title">搜索历史</div>
+      <div class="button-list">
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">洗发水</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+      </div>
     </div>
-    <div>
-      猜你想找
+    <div class="guess">
+      <div class="title">猜你想找</div>
+      <div class="button-list">
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+        <div class="button-wrapper">
+          <div class="button">零食</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -80,4 +117,42 @@ export default {
       color #333333
 .history
   margin-top 2rem
+  .title
+    text-align left
+    line-height .4rem
+    /*background #eee*/
+    padding-left .2rem
+    color #666
+  .button-list
+    overflow hidden
+    padding .1rem
+    .button-wrapper
+      width 33.33%
+      float left
+      .button
+        text-align center
+        margin .1rem
+        border .02rem solid #ccc
+        padding .1rem 0
+        border-radius .1rem
+.guess
+  margin-top 1rem
+  .title
+    text-align left
+    line-height .4rem
+    /*background #eee*/
+    padding-left .2rem
+    color #666
+  .button-list
+    overflow hidden
+    padding .1rem
+    .button-wrapper
+      width 33.33%
+      float left
+      .button
+        text-align center
+        margin .1rem
+        border .02rem solid #ccc
+        padding .1rem 0
+        border-radius .1rem
 </style>
