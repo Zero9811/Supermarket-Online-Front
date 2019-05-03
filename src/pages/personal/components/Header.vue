@@ -3,6 +3,7 @@
       <div class="back">
         <div class="iconfont back-icon" @click="routerBack">&#xe624;</div>
       </div>
+      <div class="title">个人中心</div>
     </div>
 </template>
 
@@ -27,4 +28,8 @@ export default {
     text-align : center
     font-size : .4rem
     color #333333
+.title
+  margin-top .1rem
+  padding-top .15rem
+  padding-bottom .2rem
 </style>
