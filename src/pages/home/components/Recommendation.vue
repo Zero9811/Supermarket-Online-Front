@@ -24,6 +24,10 @@ export default {
   props: {
     recommend: Array
   },
+  mounted () {
+    // 这里进行ajax请求，请求首页推荐的商品
+    console.log('推荐组件创建')
+  },
   data () {
     return {
       recommendList: [{

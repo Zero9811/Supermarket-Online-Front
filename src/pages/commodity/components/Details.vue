@@ -23,6 +23,8 @@ export default {
   name: 'CommodityDetails',
   mounted () {
     this.scroll = new Bscroll(this.$refs.details)
+    // 这里写ajax请求，按商品类型请求商品
+    console.log('接收到主页的参数 ' + this.$store.state.typeId)
   },
   props: {
     recommend: Array,

@@ -1,13 +1,13 @@
 <template>
-    <div></div>
+   <div></div>
 </template>
 
 <script>
 export default {
-  name: 'PersonalInfo'
+  name: 'ShoppingCart'
 }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 
 </style>

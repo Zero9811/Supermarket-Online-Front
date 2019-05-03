@@ -1,13 +1,11 @@
 <template>
     <div class="icons">
-      <router-link to="/commodity">
-        <div class="icon" v-for="item of iconList" :key="item.id">
+        <div class="icon" v-for="item of iconList" :key="item.id" @click="handleCommodityClick(item.id)">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl"/>
           </div>
             <p class="icon-desc">{{item.desc}}</p>
         </div>
-      </router-link>
     </div>
 </template>
 
@@ -49,6 +47,12 @@ export default {
         imgUrl: '/static/navigationImgs/personal.png',
         desc: '个人护理'
       }]
+    }
+  },
+  methods: {
+    handleCommodityClick (typeId) {
+      this.$store.dispatch('changeType', typeId)
+      this.$router.push({path: '/commodity'})
     }
   }
 }

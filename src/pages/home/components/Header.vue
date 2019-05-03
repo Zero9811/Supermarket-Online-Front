@@ -10,7 +10,7 @@
       </div>
     </router-link>
       <div class="header-right">
-        <div class="iconfont my-icon" @click="myClick">&#xe607;</div>
+        <div class="iconfont my-icon" @click="myClick">&#xe656;</div>
       </div>
   </div>
 </template>
