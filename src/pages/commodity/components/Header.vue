@@ -11,7 +11,7 @@
         <div class="address-content">北京北京北京北京北京北京北京北京北京北京北京</div>
         <div class="iconfont address-choose">&#xe62d;</div>
       </div>
-      <div class="iconfont cart-icon">&#xe621;</div>
+      <div class="iconfont cart-icon" @click="handleCartClick">&#xe621;</div>
     </div>
     <div class="header-right">
       <div class="iconfont my-icon" @click="myClick">&#xe656;</div>
@@ -24,13 +24,14 @@ export default {
   name: 'CommodityHeader',
   methods: {
     myClick () {
-      var cPos = document.cookie.indexOf('smo_token')
-      // eslint-disable-next-line eqeqeq
-      if (cPos != -1) {
+      if (document.cookie.includes('smo_token')) {
         this.$router.push({path: '/personal'})
       } else {
         this.$router.push({path: '/login'})
       }
+    },
+    handleCartClick () {
+      this.$router.push('/cart')
     }
   }
 }

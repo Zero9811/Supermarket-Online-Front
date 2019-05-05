@@ -6,6 +6,7 @@ import Personal from '@/pages/personal/Personal'
 import Register from '@/pages/login/Register'
 import Commodity from '@/pages/commodity/Commodity'
 import Search from '@/pages/commodity/Search'
+import ShoppingCart from '@/pages/cart/ShoppingCart'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/commodity/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: ShoppingCart
     }
   ]
 })

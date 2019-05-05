@@ -20,9 +20,7 @@ export default {
   name: 'HomeHeader',
   methods: {
     myClick () {
-      var cPos = document.cookie.indexOf('smo_token')
-      // eslint-disable-next-line eqeqeq
-      if (cPos != -1) {
+      if (document.cookie.includes('smo_token')) {
         this.$router.push({path: '/personal'})
       } else {
         this.$router.push({path: '/login'})

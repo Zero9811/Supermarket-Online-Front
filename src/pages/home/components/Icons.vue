@@ -51,8 +51,12 @@ export default {
   },
   methods: {
     handleCommodityClick (typeId) {
-      this.$store.dispatch('changeType', typeId)
-      this.$router.push({path: '/commodity'})
+      if (document.cookie.includes('smo_token')) {
+        this.$store.dispatch('changeType', typeId)
+        this.$router.push({path: '/commodity'})
+      } else {
+        this.$router.push('/login')
+      }
     }
   }
 }
