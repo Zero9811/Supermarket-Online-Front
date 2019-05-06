@@ -7,6 +7,7 @@ import Register from '@/pages/login/Register'
 import Commodity from '@/pages/commodity/Commodity'
 import Search from '@/pages/commodity/Search'
 import ShoppingCart from '@/pages/cart/ShoppingCart'
+import CommodityInfo from '@/pages/commodity-info/CommodityInfo'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/cart',
       name: 'Cart',
       component: ShoppingCart
+    },
+    {
+      path: '/commodity/:id',
+      name: 'CommodityInfo',
+      component: CommodityInfo
     }
   ]
 })

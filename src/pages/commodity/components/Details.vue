@@ -2,7 +2,7 @@
   <div class="detail" ref="details">
     <ul>
       <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-        <img class="item-img" :src="item.imgUrl1"/>
+        <router-link tag="img" class="item-img" :src="item.imgUrl1" :to="'/commodity/' + item.id"></router-link>
         <div class="item-info">
           <p class="item-title">{{item.name}}</p>
           <p class="item-desc">{{item.description}}</p>
