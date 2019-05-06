@@ -4,17 +4,9 @@
         <div class="all-orders">查看全部订单</div>
         <div class="order-header">我的订单</div>
         <div class="order-icons-wrapper">
-          <div class="icon">
-            <div class="iconfont order-icon">&#xe615;</div>
-            <p class="icon-desc">待付款</p>
-          </div>
-          <div class="icon">
-            <div class="iconfont order-icon">&#xe601;</div>
-            <p class="icon-desc">待发货</p>
-          </div>
-          <div class="icon">
-            <div class="iconfont order-icon">&#xe60b;</div>
-            <p class="icon-desc">待收货</p>
+          <div class="icon" v-for="(item,index) of category"  :key="index">
+            <div class="iconfont order-icon">{{item.icon}}</div>
+            <p class="icon-desc">{{item.desc}}</p>
           </div>
           <div class="icon">
             <div class="iconfont order-icon">&#xe639;</div>
@@ -31,7 +23,21 @@
 
 <script>
 export default {
-  name: 'OrderReview'
+  name: 'OrderReview',
+  data () {
+    return {
+      category: [{
+        icon: '\ue615',
+        desc: '待付款'
+      }, {
+        icon: '\ue601',
+        desc: '待发货'
+      }, {
+        icon: '\ue60b',
+        desc: '待收货'
+      }]
+    }
+  }
 }
 </script>
 

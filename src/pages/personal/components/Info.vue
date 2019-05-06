@@ -5,21 +5,9 @@
           我的信息
         </div>
         <div class="info-icons-wrapper">
-          <div class="icon-wrapper">
-            <div class="iconfont icon">&#xe670;</div>
-            <p class="icon-desc">个人信息</p>
-          </div>
-          <div class="icon-wrapper">
-            <div class="iconfont icon">&#xe614;</div>
-            <p class="icon-desc">会员等级</p>
-          </div>
-          <div class="icon-wrapper">
-            <div class="iconfont icon">&#xe639;</div>
-            <p class="icon-desc">我的评价</p>
-          </div>
-          <div class="icon-wrapper">
-            <div class="iconfont icon">&#xe600;</div>
-            <p class="icon-desc">浏览历史</p>
+          <div class="icon-wrapper" v-for="(item,index) of info" :key="index">
+            <div class="iconfont icon">{{item.icon}}</div>
+            <p class="icon-desc">{{item.desc}}</p>
           </div>
         </div>
       </div>
@@ -28,7 +16,24 @@
 
 <script>
 export default {
-  name: 'PersonalInfo'
+  name: 'PersonalInfo',
+  data () {
+    return {
+      info: [{
+        icon: '\ue670',
+        desc: '个人信息'
+      }, {
+        icon: '\ue614',
+        desc: '会员等级'
+      }, {
+        icon: '\ue639',
+        desc: '我的评价'
+      }, {
+        icon: '\ue600',
+        desc: '浏览历史'
+      }]
+    }
+  }
 }
 </script>
 

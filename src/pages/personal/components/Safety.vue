@@ -23,13 +23,30 @@
           </div>
         </div>
       </div>
-      <div class="exit">退出当前账号</div>
+      <div class="exit" @click="handleExitClick">退出当前账号</div>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'PersonalSafety'
+  name: 'PersonalSafety',
+  methods: {
+    handleExitClick () {
+      let cookies = document.cookie.split(';')
+      for (let i = 0; i < cookies.length; i++) {
+        if (cookies[i].indexOf(' ') === 0) {
+          cookies[i] = cookies[i].substring(1)
+        }
+        if (cookies[i].indexOf('smo_token') === 0) {
+          let exp = new Date()
+          exp.setTime(exp.getTime() - 60 * 1000)
+          document.cookie = cookies[i] + ';expires=' + exp.toUTCString()
+          break
+        }
+      }
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 
