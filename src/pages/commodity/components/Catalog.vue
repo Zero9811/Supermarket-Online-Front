@@ -73,8 +73,8 @@ export default {
   },
   methods: {
     handleDetailClick (typeId) {
-      this.$emit('detailChange', typeId)
-      console.log(typeId)
+      // 改变vuex中的值
+      this.$store.dispatch('changeType', typeId)
     }
   }
 }

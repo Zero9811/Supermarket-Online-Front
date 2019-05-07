@@ -4,11 +4,11 @@
         <div class="all-orders">查看全部订单</div>
         <div class="order-header">我的订单</div>
         <div class="order-icons-wrapper">
-          <div class="icon" v-for="(item,index) of category"  :key="index">
+          <div class="icon" v-for="(item,index) of category"  :key="index" @click="handleOrderClick(item.orderStatus)">
             <div class="iconfont order-icon">{{item.icon}}</div>
             <p class="icon-desc">{{item.desc}}</p>
           </div>
-          <div class="icon">
+          <div class="icon" @click="handleOrderClick(5)">
             <div class="iconfont order-icon">&#xe639;</div>
             <p class="icon-desc comment">评价</p>
           </div>
@@ -28,14 +28,23 @@ export default {
     return {
       category: [{
         icon: '\ue615',
-        desc: '待付款'
+        desc: '待付款',
+        orderStatus: 1
       }, {
         icon: '\ue601',
-        desc: '待发货'
+        desc: '待发货',
+        orderStatus: 2
       }, {
         icon: '\ue60b',
-        desc: '待收货'
+        desc: '待收货',
+        orderStatus: 3
       }]
+    }
+  },
+  methods: {
+    handleOrderClick (status) {
+      this.$store.dispatch('changeOrderStatus', status)
+      this.$router.push('/order')
     }
   }
 }

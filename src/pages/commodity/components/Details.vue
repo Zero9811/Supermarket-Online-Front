@@ -24,16 +24,15 @@ export default {
   mounted () {
     this.scroll = new Bscroll(this.$refs.details)
     // 这里写ajax请求，按商品类型请求商品
-    console.log('接收到主页的参数 ' + this.$store.state.typeId)
+    console.log('接收到主页的vuex参数 ' + this.$store.state.typeId)
   },
   props: {
-    recommend: Array,
-    typeId: Number
+    recommend: Array
   },
   watch: {
-    typeId () {
-      // 在这儿发送ajax请求
-      console.log('类型改变了 ' + this.typeId)
+    '$store.state.typeId' () {
+      // 这里写ajax请求
+      console.log('监听到了vuex中typeId的变化 ' + this.$store.state.typeId)
     }
   },
   data () {

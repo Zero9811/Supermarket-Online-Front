@@ -2,8 +2,8 @@
     <div>
       <commodity-header></commodity-header>
       <search-icon></search-icon>
-      <commodity-catalog @detailChange="handleDetailChange"></commodity-catalog>
-      <commodity-details :typeId="typeId"></commodity-details>
+      <commodity-catalog></commodity-catalog>
+      <commodity-details></commodity-details>
     </div>
 </template>
 
