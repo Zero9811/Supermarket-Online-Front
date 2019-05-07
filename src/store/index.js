@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     typeId: 0,
-    orderStatus: 10
+    orderStatus: 10,
+    username: '',
+    city: '重庆'
   },
   actions: {
     changeType (ctx, typeId) {

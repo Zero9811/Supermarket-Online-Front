@@ -3,7 +3,7 @@
     <div class="back">
       <div class="iconfont back-icon" @click="routerBack">&#xe624;</div>
     </div>
-    <div class="title"></div>
+    <div class="title">我的购物车</div>
   </div>
 </template>
 
@@ -22,12 +22,12 @@ export default {
   @import "~styles/varibles.styl"
   .header
     background $bgColor
-    padding-bottom .5rem
-    margin-bottom 1rem
+    padding-bottom .2rem
     .back
       width : .64rem
       float : left
-      margin-top .1rem
+      margin-top .23rem
+      margin-left .1rem
       .back-icon
         float left
         text-align : center
@@ -35,5 +35,7 @@ export default {
         color white
     .title
       /*margin-top .1rem*/
-      padding-top .15rem
+      padding-top .3rem
+      color white
+      font-size .36rem
 </style>

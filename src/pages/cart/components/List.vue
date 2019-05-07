@@ -8,7 +8,7 @@
             <p class="item-desc">{{item.description}}</p>
             <div class="item-price-wrapper">
               <div class="item-price">{{item.price}}</div>
-              <div class="zhanwei"></div>
+              <div class="weight">重量</div>
               <button class="item-button">购买</button>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default {
 .outer-layer
   overflow hidden
   position absolute
-  top 2rem
+  top 2.3rem
   left 0
   right 0
   bottom 1.4rem
@@ -135,11 +135,12 @@ export default {
           border-radius .09rem
           color: #fff
           text-align center
-        .zhanwei
+        .weight
           flex : 1
           height : .44rem
           line-height : .64rem
-          margin-top : .12rem
           margin-left : .2rem
           border-radius : .1rem
+          color #BDBDBD
+
 </style>
