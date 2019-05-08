@@ -33,11 +33,11 @@ export default {
       }, {
         icon: '\ue601',
         desc: '待发货',
-        orderStatus: 2
+        orderStatus: 3
       }, {
         icon: '\ue60b',
         desc: '待收货',
-        orderStatus: 3
+        orderStatus: 4
       }]
     }
   },

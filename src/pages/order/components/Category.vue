@@ -1,9 +1,7 @@
 <template>
-    <div class="category-wrapper">
-      <div class="category-title-wrapper" v-for="item of orderTile" :key="item.status">
-        <div class="category-title" @click="getOrderByStatus(item.status)">{{item.name}}</div>
-      </div>
-    </div>
+  <el-tabs v-model="activeName" class="category-wrapper" @tab-click="handleClick">
+    <el-tab-pane v-for="item of orderTile" :key="item.status" :label="item.name" :name="item.status + ''"></el-tab-pane>
+  </el-tabs>
 </template>
 
 <script>
@@ -11,6 +9,7 @@ export default {
   name: 'OrderCategory',
   data () {
     return {
+      activeName: this.$store.state.orderStatus + '',
       orderTile: [{
         status: 10,
         name: '全部'
@@ -30,9 +29,8 @@ export default {
     }
   },
   methods: {
-    getOrderByStatus (status) {
-      console.log(status)
-      this.$store.dispatch('changeOrderStatus', status)
+    handleClick () {
+      this.$store.dispatch('changeOrderStatus', parseInt(this.activeName))
     }
   }
 }
@@ -42,24 +40,8 @@ export default {
   @import "~styles/mixins.styl"
 .category-wrapper
   padding-top .2rem
+  margin-left .2rem
   overflow : hidden
   height : 0
-  padding-bottom : 15%
-  .category-title-wrapper
-    position relative
-    overflow : hidden
-    float : left
-    width : 20%
-    height 0
-    padding-bottom : 20%
-    .category-title
-      position absolute
-      padding-top .5rem
-      padding-left .3rem
-      height .44rem
-      line-height .44rem
-      text-align center
-      font-size .32rem
-      color #333333
-      ellipsis()
+  padding-bottom : 11%
 </style>

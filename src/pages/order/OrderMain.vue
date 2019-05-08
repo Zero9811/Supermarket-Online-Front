@@ -5,6 +5,7 @@
         <order-category></order-category>
       </div>
       <order-list></order-list>
+      <div class="zhanwei"></div>
     </div>
 </template>
 
@@ -25,4 +26,7 @@ export default {
 <style lang="stylus" scoped>
 .order-main
   background #F2F2F2
+  .zhanwei
+    background #F2F2F2
+    height 3.6rem
 </style>
