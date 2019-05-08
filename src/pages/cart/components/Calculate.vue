@@ -4,7 +4,7 @@
         <div>
           <div class="all">全选</div>
         </div>
-        <el-button class="buy">发起结算</el-button>
+        <el-button class="buy" @click="buy">发起结算</el-button>
         <div class="price">合计: 222222</div>
       </div>
     </div>
@@ -12,7 +12,12 @@
 
 <script>
 export default {
-  name: 'CalculatePrice'
+  name: 'CalculatePrice',
+  methods: {
+    buy () {
+      this.$router.push('/buy')
+    }
+  }
 }
 </script>
 

@@ -55,9 +55,7 @@ export default {
 @import "~styles/varibles.styl"
 .safety-total-wrapper
   background #F2F2F2
-  height 2rem
   padding-top .2rem
-  padding-bottom 100%
   .safety-wrapper
     border-radius .2rem
     background white
@@ -100,9 +98,9 @@ export default {
         .safety-center
           padding-left .4rem
   .exit
-    padding-top 4%
-    margin-top 13%
-    padding-bottom 100%
+    margin-top 1rem
+    padding-top .4rem
+    height .65rem
     font-size .35rem
     background $bgColor
     color white
