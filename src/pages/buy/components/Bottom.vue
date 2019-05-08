@@ -12,8 +12,8 @@
       center class="payment">
       <span>您的订单总金额为 {{this.totalAmount}} 请立即支付</span>
       <span slot="footer" class="dialog-footer">
-          <el-button @click="payment = false">稍 后</el-button>
-          <el-button type="primary" @click="payment = false">支 付</el-button>
+          <el-button @click="cancelPay">稍 后</el-button>
+          <el-button type="primary" @click="pay">支 付</el-button>
         </span>
     </el-dialog>
   </div>
@@ -26,6 +26,16 @@ export default {
   data () {
     return {
       payment: false
+    }
+  },
+  methods: {
+    cancelPay () {
+      this.payment = false
+      this.$router.push('/personal')
+    },
+    pay () {
+      this.payment = false
+      this.$router.push('/personal')
     }
   }
 }
