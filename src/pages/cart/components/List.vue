@@ -2,6 +2,13 @@
     <div class="outer-layer" ref="list">
       <ul>
         <li class="item border-bottom" v-for="item of cartList" :key="item.id">
+          <el-row>
+            <el-col :span="4">
+              <div class="grid-content bg-purple-dark">
+                <div></div>
+              </div>
+            </el-col>
+          </el-row>
           <router-link tag="img" class="item-img" :src="item.imgUrl1" :to="'/commodity/' + item.id"/>
           <div class="item-info">
             <p class="item-title">{{item.name}}</p>
@@ -9,7 +16,11 @@
             <div class="item-price-wrapper">
               <div class="item-price">{{item.price}}</div>
               <div class="weight">重量</div>
-              <button class="item-button">购买</button>
+              <div class="item-button">
+                <div class="ii" @click="subOne(item)">-</div>
+                <div class="uu" @click="addOne(item)">+</div>
+                <div>{{item.nums}}</div>
+              </div>
             </div>
           </div>
         </li>
@@ -26,13 +37,14 @@ export default {
   },
   data () {
     return {
+      num: 2,
       cartList: [{
         id: 1,
         imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
-        nums: 1,
+        nums: 2,
         type: '零食'
       }, {
         id: 2,
@@ -40,6 +52,7 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 2,
         type: '零食'
       }, {
         id: 3,
@@ -47,6 +60,7 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 1,
         type: '零食'
       }, {
         id: 4,
@@ -54,6 +68,7 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 1,
         type: '零食'
       }, {
         id: 5,
@@ -61,6 +76,7 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 1,
         type: '零食'
       }, {
         id: 6,
@@ -68,6 +84,7 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 1,
         type: '零食'
       }, {
         id: 7,
@@ -75,6 +92,7 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 1,
         type: '零食'
       }, {
         id: 8,
@@ -82,8 +100,22 @@ export default {
         name: '印尼进口丽芝士',
         description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
         price: 3.43,
+        nums: 1,
         type: '零食'
       }]
+    }
+  },
+  methods: {
+    handleChange (value) {
+      console.log(value)
+    },
+    addOne (item) {
+      item.nums++
+    },
+    subOne (item) {
+      if (item.nums > 1) {
+        item.nums--
+      }
     }
   }
 }
@@ -130,13 +162,15 @@ export default {
           line-height .44rem
           width : 1.24rem
           float : right
-          background $bgColor
           padding 0 .2rem
           border-radius .09rem
-          color: #fff
           text-align center
+          .ii
+            float left
+          .uu
+            float right
         .weight
-          flex : 1
+          flex 1
           height : .44rem
           line-height : .64rem
           margin-left : .2rem

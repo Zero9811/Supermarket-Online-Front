@@ -47,6 +47,7 @@
         <el-switch v-model="form.defaultAddress"></el-switch>
       </el-form-item>
       <el-button plain>保存</el-button>
+      <el-input-number v-model="form.id" :min="1" :max="10" size="mini"></el-input-number>
     </el-form>
   </div>
 </template>
