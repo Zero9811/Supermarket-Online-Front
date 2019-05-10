@@ -12,7 +12,7 @@ export default {
   name: 'PersonalHeader',
   methods: {
     routerBack () {
-      this.$router.back()
+      this.$router.push('/')
     }
   }
 }

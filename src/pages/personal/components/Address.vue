@@ -1,7 +1,7 @@
 <template>
     <div class="address-total-wrapper">
       <div class="address-wrapper">
-        <div class="address-manage">管理收货地址</div>
+        <div class="address-manage" @click="handleAddressClick">管理收货地址</div>
         <div class="address-title">收货地址</div>
         <div class="address-detail">
           <div class="iconfont address-icon">&#xe65d;</div>
@@ -13,7 +13,12 @@
 
 <script>
 export default {
-  name: 'PersonalAddress'
+  name: 'PersonalAddress',
+  methods: {
+    handleAddressClick () {
+      this.$router.push('/address')
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="outer">
-    <div class="address-wrapper">
+    <div class="address-wrapper" @click="chooseAddressClick">
       <div class="address-icon-wrapper">
         <div class="iconfont address-icon">&#xe65d;</div>
       </div>
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-  name: 'DeliveryAddress'
+  name: 'DeliveryAddress',
+  methods: {
+    chooseAddressClick () {
+      this.$router.push('/address')
+    }
+  }
 }
 </script>
 

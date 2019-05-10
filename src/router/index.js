@@ -10,6 +10,8 @@ import ShoppingCart from '@/pages/cart/ShoppingCart'
 import CommodityInfo from '@/pages/commodity-info/CommodityInfo'
 import OrderMain from '@/pages/order/OrderMain'
 import Buy from '@/pages/buy/Buy'
+import AddressMain from '@/pages/address/AddressMain'
+import AddressDetail from '@/pages/address/AddressDetail'
 
 Vue.use(Router)
 
@@ -57,13 +59,23 @@ export default new Router({
     },
     {
       path: '/order',
-      name: '/OrderMain',
+      name: 'OrderMain',
       component: OrderMain
     },
     {
       path: '/buy',
-      name: '/Buy',
+      name: 'Buy',
       component: Buy
+    },
+    {
+      path: '/address',
+      name: 'AddressMain',
+      component: AddressMain
+    },
+    {
+      path: '/addressDetail',
+      name: 'AddressDetail',
+      component: AddressDetail
     }
   ]
 })

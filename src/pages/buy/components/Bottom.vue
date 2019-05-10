@@ -13,7 +13,7 @@
       <span>您的订单总金额为 {{this.totalAmount}} 请立即支付</span>
       <span slot="footer" class="dialog-footer">
           <el-button @click="cancelPay">稍 后</el-button>
-          <el-button type="primary" @click="pay">支 付</el-button>
+          <el-button type="primary" @click="pay" :loading="payLoading">支 付</el-button>
         </span>
     </el-dialog>
   </div>
@@ -25,7 +25,8 @@ export default {
   props: ['totalAmount', 'totalWeight'],
   data () {
     return {
-      payment: false
+      payment: false,
+      payLoading: false
     }
   },
   methods: {
@@ -34,8 +35,10 @@ export default {
       this.$router.push('/personal')
     },
     pay () {
-      this.payment = false
-      this.$router.push('/personal')
+      this.payLoading = true
+      // 这里写ajax请求，结果成功之后跳转到个人中心
+      // this.payment = false
+      // this.$router.push('/personal')
     }
   }
 }

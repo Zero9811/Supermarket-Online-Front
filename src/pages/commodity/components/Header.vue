@@ -9,7 +9,7 @@
       <div>
         <div class="iconfont address-icon">&#xe65d;</div>
         <div class="address-content">北京北京北京北京北京北京北京北京北京北京北京</div>
-        <div class="iconfont address-choose">&#xe62d;</div>
+        <div class="iconfont address-choose" @click="chooseAddressClick">&#xe62d;</div>
       </div>
       <div class="iconfont cart-icon" @click="handleCartClick">&#xe621;</div>
     </div>
@@ -32,6 +32,9 @@ export default {
     },
     handleCartClick () {
       this.$router.push('/cart')
+    },
+    chooseAddressClick () {
+      this.$router.push('/address')
     }
   }
 }
