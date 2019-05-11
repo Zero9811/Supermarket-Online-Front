@@ -3,14 +3,14 @@
       <div class="recommend-title">热销推荐</div>
       <ul>
         <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-          <router-link tag="img" class="item-img" :src="item.imgUrl1" :to="'/commodity/' + item.id"/>
+          <router-link tag="img" class="item-img" :src="item.picture1" :to="'/commodity/' + item.id"/>
           <div class="item-info">
             <p class="item-title">{{item.name}}</p>
             <p class="item-desc">{{item.description}}</p>
             <div class="item-price-wrapper">
-              <div class="item-price">{{item.price}}</div>
+              <div class="item-price">￥{{item.price}}</div>
               <div class="zhanwei"></div>
-              <button class="item-button">购买</button>
+              <button class="item-button" @click="handleBuyClick">购买</button>
             </div>
           </div>
         </li>
@@ -19,6 +19,9 @@
 </template>
 
 <script>
+import axios from 'axios'
+// 允许携带cookie
+axios.defaults.withCredentials = true
 export default {
   name: 'Recommendation',
   props: {
@@ -26,81 +29,29 @@ export default {
   },
   mounted () {
     // 这里进行ajax请求，请求首页推荐的商品
+    axios.get('/api/myCommodity/commodity/type/5')
+      .then(this.axiosResult)
     console.log('推荐组件创建')
   },
   data () {
     return {
-      recommendList: [{
-        id: '0001',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0002',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0003',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0004',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0005',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0006',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0007',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0008',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '0009',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }, {
-        id: '00010',
-        imgUrl1: '//img.alicdn.com/bao/uploaded/i4/725677994/TB2Fg3PnwvD8KJjy0FlXXagBFXa_!!725677994.jpg_160x160q90.jpg',
-        name: '印尼进口丽芝士',
-        description: '好吃好吃好吃好吃好吃好吃好吃好吃好吃',
-        price: 3.43,
-        type: '零食'
-      }]
+      recommendList: []
+    }
+  },
+  methods: {
+    axiosResult (res) {
+      res = res.data
+      console.log(res)
+      if (res.code === 0) {
+        this.recommendList = res.data
+      }
+    },
+    handleBuyClick () {
+      if (document.cookie.includes('smo_token')) {
+        alert('已添加到购物车')
+      } else {
+        this.$router.push('/login')
+      }
     }
   }
 }
